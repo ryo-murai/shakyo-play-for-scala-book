@@ -1,1 +1,2 @@
 GET     /        controllers.Application.index
+GET     /hello   controllers.Application.hello(n: String)

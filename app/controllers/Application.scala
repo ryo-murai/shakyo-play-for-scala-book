@@ -7,4 +7,8 @@ object Application extends Controller {
   def index = Action {
     Ok("hello world")
   }
+
+  def hello(name: String) = Action {
+    Ok(views.html.hello(name))
+  }
 }
