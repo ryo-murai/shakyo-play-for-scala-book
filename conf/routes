@@ -1,2 +1,6 @@
-GET     /        controllers.Application.index
-GET     /hello   controllers.Application.hello(n: String)
+GET     /               controllers.Application.index
+GET     /hello          controllers.Application.hello(n: String)
+
+GET     /products       controllers.Products.list
+
+GET     /assets/*file   controllers.Assets.at(path="/public", file)
