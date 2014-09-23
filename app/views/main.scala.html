@@ -8,32 +8,29 @@
   </head>
   <body>
     <div class="screenshot">
-      <div class="navbar navbar-fixed-top">
-       <div class="navbar-inner">
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-          <a class="brand" href="@routes.Application.index()">
+          <a class="navbar-brand" href="@routes.Application.index()">
             @Messages("application.name")
           </a>
-          <ul class="nav">
-            <li class="divider-vertical"></li>
+          <ul class="nav navbar-nav">
             <li class="active">
               <a href="@routes.Products.list()">
-                @Messages("product.list.navigation")
+                @Messages("products.list.navigation")
               </a>
             </li>
-            <li class="active">
+            <li>
               <a href="@routes.Products.newProduct()">
-                <i class="icon-plus icon-white"></i>
-                @Messages("product.new.command")
+                <i class="glyphicon-plus glyphicon-white"></i>
+                @Messages("products.new.command")
               </a>
             </li>
-            <li class="divider-vertical"></li>
           </ul>
         </div>
-      </div>
+      </nav>  <!-- nav -->
     </div>
 
-    <div class="container">
+    <div class="container bg-info">
       @if(flash.get("success").isDefined){
         <div class="alert alert-success">
           @flash.get("success")
@@ -41,7 +38,7 @@
       }
 
       @if(flash.get("error").isDefined){
-        <div class="alert alert-error">
+        <div class="alert alert-danger">
           @flash.get("error")
         </div>
       }
@@ -49,5 +46,7 @@
       @content
       @debug()
     </div>
+
+    <script src='@routes.Assets.at("js/bootstrap.js")'></script>
   </body>
 </html>

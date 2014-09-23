@@ -9,6 +9,7 @@ products.details = Product: {0}
 products.form = Product details
 products.new = (new)
 products.new.command = New
+products.list.navigation = Products
 products.new.submit = Add
 products.new.success = Successfully added product {0}.
 

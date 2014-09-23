@@ -8,6 +8,7 @@ products.details = 製品情報 : {0}
 products.form = 製品情報
 products.new = (新規)
 products.new.command = 新規
+products.list.navigation = 製品一覧
 products.new.submit = 追加
 products.new.success = 製品情報を追加しました {0}.
 
