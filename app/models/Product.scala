@@ -1,21 +1,24 @@
 package models
 
+import scalikejdbc._
+import skinny.orm._
+
 case class Product(ean: Long, name: String, description: String)
 
-object Product {
-  var products = Set(
-    Product(5010255079763L, "Paperclips Large", "Large Plain Pack of 1000"),
-    Product(5018206244666L, "Giant Paperclips", "Giant Plain 51mm 100 pack"),
-    Product(5018306332812L, "Paperclip Giant Plain", "Giant Plain Pack of 10000"),
-    Product(5018306312913L, "No Tear Paper Clip", "No Tear Extra Large Pack of 1000"),
-    Product(5018206244611L, "Zebra Paperclips", "Zebra Length 28mm Assorted 150 Pack")
-  )
+object Product extends SkinnyCRUDMapper[Product] {
 
-  def findAll = products.toList.sortBy(_.ean)
+  override val defaultAlias = createAlias("p")
 
-  def findByEan(ean: Long) = products.find(_.ean == ean)
+  override def extract(rs: WrappedResultSet, n: ResultName[Product]): Product = Product(
+    ean = rs.get(n.ean),
+    name = rs.get(n.name),
+    description = rs.get(n.description))
 
-  def add(product: Product) {
-    products = products + product
-  }
+  override def primaryKeyFieldName = "ean"
+
+  def findByEan(ean: Long) = findById(ean)
+
+  def add(product: Product) =
+    createWithAttributes('ean -> product.ean, 'name -> product.name, 'description -> product.description)
+  // there should be better way to do this like ... createWithEntity(product)
 }
