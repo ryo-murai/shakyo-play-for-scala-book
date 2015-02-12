@@ -54,4 +54,8 @@ object Products extends Controller {
     )(Product.apply)(Product.unapply)
   )
 
+  def alias(alias: String) = Action {
+    NotImplemented
+  }
+
 }
