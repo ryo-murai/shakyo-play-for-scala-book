@@ -1,10 +1,17 @@
-GET     /               controllers.Application.index
+GET     /                             controllers.Application.index
 
-GET     /products       controllers.Products.list
-POST    /products       controllers.Products.save
-GET     /products/new   controllers.Products.newProduct
-GET     /products/:ean  controllers.Products.show(ean: Long)
+GET     /products                     controllers.Products.list
+POST    /products                     controllers.Products.save
+GET     /products/new                 controllers.Products.newProduct
+GET     /products/$ean<\d{13}>        controllers.Products.show(ean: Long)
+GET     /products/:alias              controllers.Products.alias(alias: String)
+POST    /products/$ean<\d{13}>/delete controllers.Products.delete(ean: Long)
 
-GET     /barcode/:ean   controllers.Barcodes.barcode(ean: Long)
+GET     /barcode/:ean                 controllers.Barcodes.barcode(ean: Long)
 
-GET     /assets/*file   controllers.Assets.at(path="/public", file)
+GET     /assets/*file                 controllers.Assets.at(path="/public", file)
+
+# chap 4
+GET     /chap4/version                controllers.Chap4.version
+GET     /chap4/json                   controllers.Chap4.json
+GET     /chap4/xml                    controllers.Chap4.xml

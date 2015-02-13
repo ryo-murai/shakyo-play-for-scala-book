@@ -16,4 +16,9 @@
     <dt>@Messages("description"):</dt>
     <dd>@product.description</dd>
   </dl>
+  <div>
+    <form onsubmit="return confirm('@Messages("products.delete.confirm")')" method="post" action="@controllers.routes.Products.delete(product.ean)">
+      <input type="submit" class="btn primary" value='@Messages("products.delete.submit")'>
+    </form>
+  </div>
 }
