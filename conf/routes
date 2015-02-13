@@ -10,3 +10,8 @@ GET     /products/$ean<\d{13}>/delete controllers.Products.delete(ean: Long)
 GET     /barcode/:ean                 controllers.Barcodes.barcode(ean: Long)
 
 GET     /assets/*file                 controllers.Assets.at(path="/public", file)
+
+# chap 4
+GET     /chap4/version                controllers.Chap4.version
+GET     /chap4/json                   controllers.Chap4.json
+GET     /chap4/xml                    controllers.Chap4.xml

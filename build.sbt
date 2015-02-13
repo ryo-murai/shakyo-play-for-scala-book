@@ -6,7 +6,8 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala).settings(
   resolvers += "sonatype releases" at "https://oss.sonatype.org/content/repositories/releases",
   libraryDependencies ++= Seq(
     jdbc,
-    "net.sf.barcode4j" % "barcode4j" % "2.1",
+    "org.scala-lang.modules" %% "scala-xml"                  % "1.0.3",
+    "net.sf.barcode4j" % "barcode4j"                         % "2.1",
     "org.skinny-framework" %% "skinny-orm"                   % "1.3.+",
     "org.scalikejdbc" %% "scalikejdbc-config"                % "2.2.3",
     "org.scalikejdbc" %% "scalikejdbc-play-dbplugin-adapter" % "2.3.4",
