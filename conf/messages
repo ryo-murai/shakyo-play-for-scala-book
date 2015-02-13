@@ -12,6 +12,9 @@ products.new.command = New
 products.list.navigation = Products
 products.new.submit = Add
 products.new.success = Successfully added product {0}.
+products.delete.submit = Delete
+products.delete.success = Successfully deleted product {0}.
+products.delete.confirm = Are you sure you want to delete ?
 
 validation.errors = Please correct the errors in the form.
 validation.ean.duplicate = A product  with this EAN code already exists

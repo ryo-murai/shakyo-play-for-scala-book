@@ -11,6 +11,9 @@ products.new.command = 新規
 products.list.navigation = 製品一覧
 products.new.submit = 追加
 products.new.success = 製品情報を追加しました {0}.
+products.delete.submit = 削除
+products.delete.success = 製品情報を削除しました {0}.
+products.delete.confirm = 製品情報を削除してもよろしいですか
 
 validation.errors = 記入情報を修正してください.
 validation.ean.duplicate = 指定されたEANコードは既に登録済みです.
