@@ -36,6 +36,13 @@ object Products extends Controller {
     )
   }
 
+  def delete(ean: Long) = Action {
+    val num = Product.deleteById(ean)
+    Redirect(routes.Products.list())
+    // todo: add flashing message with success or not
+    // todo: add link from show page
+  }
+
   def newProduct = Action { implicit request =>
     val form = if (request2flash.get("error").isDefined)
       productForm.bind(request2flash.data)
@@ -57,5 +64,4 @@ object Products extends Controller {
   def alias(alias: String) = Action {
     NotImplemented
   }
-
 }
