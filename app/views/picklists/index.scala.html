@@ -1,0 +1,14 @@
+@(warehouse: String)(implicit flash: Flash, lang: Lang)
+
+@main("Pick lists") {
+  @helper.form(action = routes.PickLists.sendAsync(warehouse)) {
+    <input type="submit" class="btn primary" value='@Messages("picklist.generate_send")' />
+  }
+
+  <button type="button" class="btn primary">
+    <a href="@routes.PickLists.preview(warehouse)">
+     @Messages("picklist.preview")
+    </a>
+  </button>
+
+}

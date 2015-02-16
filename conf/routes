@@ -9,6 +9,10 @@ POST    /products/$ean<\d{13}>/delete controllers.Products.delete(ean: Long)
 
 GET     /barcode/:ean                 controllers.Barcodes.barcode(ean: Long)
 
+GET     /picklists                    controllers.PickLists.index
+GET     /picklists/preview            controllers.PickLists.preview(warehouse: String)
+POST    /picklists/sendasync          controllers.PickLists.sendAsync(warehouse: String)
+
 GET     /assets/*file                 controllers.Assets.at(path="/public", file)
 
 # chap 4
