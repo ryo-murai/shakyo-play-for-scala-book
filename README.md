@@ -15,7 +15,7 @@
 ### chapter.3 ###
 * 3.7 Jobs
   * [SI-7958](https://github.com/scala/scala/pull/3111) `scala.concurrent.future` is deprecated, use `scala.concurrent.Future` instead.
-
+  * 3.7.3 use `Action.async` to compose `Async {}` and `Future {}` ([Play 2.2 migration guide](https://www.playframework.com/documentation/2.3.x/Migration22))
 
 ### TODO ###
 [ ] migrate to play 2.4
